@@ -38,7 +38,7 @@ export default App;
 > Somewhere in your application:
 
 ```
-  import { SnackBar } from 'simple-snackbart';
+  import { SnackBar } from 'simple-snackbar';
 
   ....
 
@@ -63,7 +63,7 @@ props that can be passed down to Snackbar:
 
 ```
 
-  import { withSnackBarHandlers } from 'simple-snackbart';
+  import { withSnackBarHandlers } from 'simple-snackbar';
     
     const SnackBarControl = ({ handleOpen }) => (
       <button onClick={()   => handleOpen('Hello!!', 'OK!')}>
