@@ -7,9 +7,9 @@ class Form extends PureComponent {
   constructor() {
     super();
     this.state = {
-      text: 'Hey There!',
+      text: 'Hello World!!',
       buttonText: 'ACK',
-      enableButton: 'true',
+      enableButton: 'false',
     };
     this.handleChange = this.handleChange.bind(this);
   }

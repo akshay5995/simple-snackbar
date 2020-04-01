@@ -42,9 +42,11 @@
     justify-content: space-between;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
+
   .SnackBarPrimary span {
     color: white;
   }
+
   .SnackBarPrimary button {
     background: transparent;
     color: #00b4d2;
@@ -63,12 +65,14 @@
     justify-content: space-between;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
+
   .SnackBarSecondary span {
     color: #000000;
   }
+
   .SnackBarSecondary button {
     background: transparent;
-    color: #00b4d2;
+    color: #cc4312;
     outline: none;
     border: 0;
     cursor: pointer;
