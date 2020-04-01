@@ -25,8 +25,8 @@ class Form extends PureComponent {
       <div className="root">
         <div className="header">Simple SnackBar</div>
         <div className="inputContainer">
-          <div> Text <input name="text" value={this.state.text} onChange={this.handleChange} /></div>
-          <div> Button Text <input name="buttonText" value={this.state.buttonText} onChange={this.handleChange} /></div>
+          <div><b>Information: </b> <input name="text" value={this.state.text} onChange={this.handleChange} /></div>
+          <div><b>Action: </b><input name="buttonText" value={this.state.buttonText} onChange={this.handleChange} /></div>
           <div>
             Enable Button
             <span><input
