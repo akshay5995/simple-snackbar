@@ -16,6 +16,6 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: git config --global github.user akshay5995
-      - run: git config --global github.token ${{secrets.GITHUB_TOKEN}} 
+      - run: git config --global github.token ${{secrets.AUTH_TOKEN}} 
       - run: npm install
       - run: npm run publish:demo
