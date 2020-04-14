@@ -67,7 +67,7 @@
   }
 
   .SnackBarSecondary span {
-    color: #00bb;
+    color: rgba(7, 7, 66, 0.733);
   }
 
   .SnackBarSecondary button {
