@@ -6,60 +6,52 @@ on:
       - closed
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - run: git config --global github.user akshay5995
-      - run: git config --global github.email akshay5995@gmail.com
-      - run: git config --global github.token ${{secrets.GITHUB_TOKEN}} 
-      - run: npm install
-      - run: npm run lib
-
   publish-patch:
-    needs: build
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged && contains(github.event.pull_request.labels.*.name, 'patch')
     steps:
       - uses: actions/checkout@v2
+      # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
+          node-version: '10.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install
+      - run: npm run lib
       - run: npm version patch
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   publish-minor:
-    needs: build
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged && contains(github.event.pull_request.labels.*.name, 'minor')
     steps:
       - uses: actions/checkout@v2
+      # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
+          node-version: '10.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install
+      - run: npm run lib
       - run: npm version minor
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   publish-major:
-    needs: build
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged && contains(github.event.pull_request.labels.*.name, 'major')
     steps:
       - uses: actions/checkout@v2
+      # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
+          node-version: '10.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install
+      - run: npm run lib
       - run: npm version major
       - run: npm publish --access public
         env:
