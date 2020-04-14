@@ -36,7 +36,7 @@
   .SnackBarPrimary {
     width: 250px;
     padding: 10px;
-    background: black;
+    background: rgb(44, 38, 38);
     display: flex;
     align-items: center;
     justify-content: space-between;
