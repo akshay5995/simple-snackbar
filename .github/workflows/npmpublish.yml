@@ -18,11 +18,11 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
       - run: |
-        git config user.name $GITHUB_ACTOR
-        git config user.email gh-actions-${GITHUB_ACTOR}@github.com
-        npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-        npm version patch --force -m "Version %s"
-        npm publish
+          git config user.name $GITHUB_ACTOR
+          git config user.email gh-actions-${GITHUB_ACTOR}@github.com
+          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          npm version patch --force -m "Version %s"
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
